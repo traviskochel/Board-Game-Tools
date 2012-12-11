@@ -20,9 +20,11 @@ $(document).ready(function(){
 	var specials = new Array();
 	specials[0] = 'Move Anywhere';
 	specials[1] = 'Bankrupt Opponent';
-	specials[2] = 'Double Pay Marker';
-	specials[3] = 'Lose One Turn';
-	specials[4] = 'Lose 5 Resources';
+	specials[2] = 'Bankrupt Opponent';
+	specials[3] = 'Double Pay Marker';
+	specials[4] = 'Double Pay Marker';
+	specials[5] = 'Lose One Turn';
+	specials[6] = 'Lose 2 Resources';
 	
 	var specials_size = specials.length;
 	
@@ -82,20 +84,27 @@ $(document).ready(function(){
 		var num_cards = $('#num-cards').val() - 1;
 		var output = '';
 		
-		i = 0;
-		while (i <= num_cards) {
-			//pick random number
-			var rand_number = Math.floor((Math.random()*total_cards));
-			var rand_card = cards[rand_number];
-			
-			// add div 
-			output +=  '<div class=" grid_4 card alpha"><div class="result">'+ rand_card +'</div></div>';
-			
-			i++;
-		}
+		$('#rand-card .results-target').fadeTo(200, 0, function() {
+		      // Animation complete.
+		      
+		      i = 0;
+		      while (i <= num_cards) {
+		      	//pick random number
+		      	var rand_number = Math.floor((Math.random()*total_cards));
+		      	var rand_card = cards[rand_number];
+		      	
+		      	// add div 
+		      	output +=  '<div class=" grid_4 card alpha"><div class="result">'+ rand_card +'</div></div>';
+		      	
+		      	i++;
+		      }
+		      
+		      $('#rand-card .results-target').html(output);
+		      	
+		      $('#rand-card .results-target').fadeTo(200, 1);
+		});
 		
-		$('#rand-card .results-target').html(output);
-	  	
+		
 	  	
 	  	return false;
 	  	
