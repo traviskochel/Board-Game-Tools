@@ -18,13 +18,10 @@ $(document).ready(function(){
 	
 	// card names
 	var specials = new Array();
-	specials[0] = 'Move Anywhere';
-	specials[1] = 'Bankrupt Opponent';
-	specials[2] = 'Bankrupt Opponent';
-	specials[3] = 'Double Pay Marker';
-	specials[4] = 'Double Pay Marker';
-	specials[5] = 'Lose One Turn';
-	specials[6] = 'Lose 2 Resources';
+	specials[0] = 'Free Tile';
+	specials[1] = 'Free Tile';
+	specials[2] = 'Lose a Tile';
+	specials[3] = 'Lose a Tile';
 	
 	var specials_size = specials.length;
 	
